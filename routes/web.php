@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AnimalClassController;
+use App\Http\Controllers\AnimalController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +23,7 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::resource('animals', AnimalController::class);
 Route::resource('animal-classes', AnimalClassController::class);
 
 require __DIR__.'/auth.php';
