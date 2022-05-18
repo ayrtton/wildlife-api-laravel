@@ -39,7 +39,7 @@
                                             <tr>
                                                 <th valign="middle" scope="row">
                                                     {{ $animals->firstItem() + $loop->index }}</th>
-                                                <td valign="middle">{{ $animal->title }}</td>
+                                                <td valign="middle">{{ $animal->specie }}</td>
                                                 <td valign="middle">
                                                     @if ($animal->created_at == null)
                                                         <span class="text-danger">Not defined</span>
@@ -50,7 +50,7 @@
                                                 <td valign="middle">
                                                     <div class="flex items-center justify-end">
                                                         <a href="{{ route('animals.edit', $animal->id) }}"" class="
-                                                            btn btn-info">Editar</a> &ensp;
+                                                            btn btn-info">Edit</a> &ensp;
                                                         <form class="inline-block"
                                                             action="{{ route('animals.destroy', $animal->id) }}"
                                                             method="POST"
@@ -66,6 +66,9 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                <div class="flex items-center justify-end mt-3">
+                                <a href="{{ route('animals.create') }}" class="btn btn-info">Add Animal</a>
+                            </div>
                             </div>
                         </div>
                     </div>

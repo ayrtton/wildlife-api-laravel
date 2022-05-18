@@ -19,7 +19,7 @@ class CreateAnimalsTable extends Migration
             $table->string('image_url');
             $table->foreignId('animal_class_id')->references('id')->on('animal_classes');
             $table->text('description');
-            $table->string('reference_link');
+            $table->text('references')->nullable();
             $table->timestamps();
         });
     }
